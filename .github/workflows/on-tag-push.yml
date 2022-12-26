@@ -24,6 +24,11 @@ jobs:
           body: ${{ github.event.head_commit.message }}
           draft: true
           prerelease: true
+      - name: init go module
+        run: go env -w GO111MODULE=off
+      - name: Get dependencies
+        run: |
+          go get -v -t -d ./...
       - name: Build binaries
         uses: sosedoff/actions/golang-build@master
       - name: Upload my_cli windows_amd64
