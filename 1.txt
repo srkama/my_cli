@@ -1,0 +1,1430 @@
+
+#
+# encoding
+#
+
+mkdir -p $WORK/b003/
+cat >$WORK/b003/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b003/_pkg_.a -trimpath "$WORK/b003=>" -p encoding -std -complete -buildid OTKXBqbGL9clho9vDvti/OTKXBqbGL9clho9vDvti -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b003/importcfg -pack /usr/local/go/src/encoding/encoding.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b003/_pkg_.a # internal
+
+#
+# internal/goarch
+#
+
+mkdir -p $WORK/b006/
+cat >$WORK/b006/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b006/_pkg_.a -trimpath "$WORK/b006=>" -p internal/goarch -std -+ -complete -buildid pAvgN3kp3twfAZa4MAF6/pAvgN3kp3twfAZa4MAF6 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b006/importcfg -pack /usr/local/go/src/internal/goarch/goarch.go /usr/local/go/src/internal/goarch/goarch_arm64.go /usr/local/go/src/internal/goarch/zgoarch_arm64.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b006/_pkg_.a # internal
+
+#
+# internal/unsafeheader
+#
+
+mkdir -p $WORK/b007/
+cat >$WORK/b007/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b007/_pkg_.a -trimpath "$WORK/b007=>" -p internal/unsafeheader -std -complete -buildid vfnXzvVCgWbM6EjKa2lR/vfnXzvVCgWbM6EjKa2lR -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b007/importcfg -pack /usr/local/go/src/internal/unsafeheader/unsafeheader.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b007/_pkg_.a # internal
+
+#
+# internal/abi
+#
+
+mkdir -p $WORK/b010/
+cat >$WORK/b010/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/internal/abi
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/abi -trimpath "$WORK/b010=>" -I $WORK/b010/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b010/symabis ./abi_test.s
+cat >$WORK/b010/importcfg << 'EOF' # internal
+# import config
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b010/_pkg_.a -trimpath "$WORK/b010=>" -p internal/abi -std -+ -buildid KyGSLBK38x4IRtXd2GIc/KyGSLBK38x4IRtXd2GIc -goversion go1.19.4 -symabis $WORK/b010/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b010/importcfg -pack -asmhdr $WORK/b010/go_asm.h /usr/local/go/src/internal/abi/abi.go /usr/local/go/src/internal/abi/abi_arm64.go
+cd /usr/local/go/src/internal/abi
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/abi -trimpath "$WORK/b010=>" -I $WORK/b010/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b010/abi_test.o ./abi_test.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b010/_pkg_.a $WORK/b010/abi_test.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b010/_pkg_.a # internal
+
+#
+# internal/cpu
+#
+
+mkdir -p $WORK/b012/
+cat >$WORK/b012/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/internal/cpu
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/cpu -trimpath "$WORK/b012=>" -I $WORK/b012/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b012/symabis ./cpu.s ./cpu_arm64.s
+cat >$WORK/b012/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b012/_pkg_.a -trimpath "$WORK/b012=>" -p internal/cpu -std -+ -buildid m5udTVJuMAMKZFzYQH-N/m5udTVJuMAMKZFzYQH-N -goversion go1.19.4 -symabis $WORK/b012/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b012/importcfg -pack -asmhdr $WORK/b012/go_asm.h /usr/local/go/src/internal/cpu/cpu.go /usr/local/go/src/internal/cpu/cpu_arm64.go /usr/local/go/src/internal/cpu/cpu_arm64_darwin.go /usr/local/go/src/internal/cpu/cpu_no_name.go
+cd /usr/local/go/src/internal/cpu
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/cpu -trimpath "$WORK/b012=>" -I $WORK/b012/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b012/cpu.o ./cpu.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/cpu -trimpath "$WORK/b012=>" -I $WORK/b012/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b012/cpu_arm64.o ./cpu_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b012/_pkg_.a $WORK/b012/cpu.o $WORK/b012/cpu_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b012/_pkg_.a # internal
+
+#
+# internal/bytealg
+#
+
+mkdir -p $WORK/b011/
+cat >$WORK/b011/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/internal/bytealg
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -gensymabis -o $WORK/b011/symabis ./compare_arm64.s ./count_arm64.s ./equal_arm64.s ./index_arm64.s ./indexbyte_arm64.s
+cat >$WORK/b011/importcfg << 'EOF' # internal
+# import config
+packagefile internal/cpu=$WORK/b012/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b011/_pkg_.a -trimpath "$WORK/b011=>" -p internal/bytealg -std -+ -buildid B_UdkRgNP358w9EtNV77/B_UdkRgNP358w9EtNV77 -goversion go1.19.4 -symabis $WORK/b011/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b011/importcfg -pack -asmhdr $WORK/b011/go_asm.h /usr/local/go/src/internal/bytealg/bytealg.go /usr/local/go/src/internal/bytealg/compare_native.go /usr/local/go/src/internal/bytealg/count_native.go /usr/local/go/src/internal/bytealg/equal_generic.go /usr/local/go/src/internal/bytealg/equal_native.go /usr/local/go/src/internal/bytealg/index_arm64.go /usr/local/go/src/internal/bytealg/index_native.go /usr/local/go/src/internal/bytealg/indexbyte_native.go
+cd /usr/local/go/src/internal/bytealg
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b011/compare_arm64.o ./compare_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b011/count_arm64.o ./count_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b011/equal_arm64.o ./equal_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b011/index_arm64.o ./index_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/bytealg -trimpath "$WORK/b011=>" -I $WORK/b011/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b011/indexbyte_arm64.o ./indexbyte_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b011/_pkg_.a $WORK/b011/compare_arm64.o $WORK/b011/count_arm64.o $WORK/b011/equal_arm64.o $WORK/b011/index_arm64.o $WORK/b011/indexbyte_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b011/_pkg_.a # internal
+
+#
+# internal/goexperiment
+#
+
+mkdir -p $WORK/b013/
+cat >$WORK/b013/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b013/_pkg_.a -trimpath "$WORK/b013=>" -p internal/goexperiment -std -complete -buildid CN7vRGC1JWmWc08ApKG-/CN7vRGC1JWmWc08ApKG- -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b013/importcfg -pack /usr/local/go/src/internal/goexperiment/exp_boringcrypto_off.go /usr/local/go/src/internal/goexperiment/exp_fieldtrack_off.go /usr/local/go/src/internal/goexperiment/exp_heapminimum512kib_off.go /usr/local/go/src/internal/goexperiment/exp_preemptibleloops_off.go /usr/local/go/src/internal/goexperiment/exp_regabiargs_on.go /usr/local/go/src/internal/goexperiment/exp_regabiwrappers_on.go /usr/local/go/src/internal/goexperiment/exp_staticlockranking_off.go /usr/local/go/src/internal/goexperiment/exp_unified_off.go /usr/local/go/src/internal/goexperiment/flags.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b013/_pkg_.a # internal
+
+#
+# internal/goos
+#
+
+mkdir -p $WORK/b014/
+cat >$WORK/b014/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b014/_pkg_.a -trimpath "$WORK/b014=>" -p internal/goos -std -+ -complete -buildid pv9yhfIzf2SjKXQv8Msb/pv9yhfIzf2SjKXQv8Msb -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b014/importcfg -pack /usr/local/go/src/internal/goos/goos.go /usr/local/go/src/internal/goos/zgoos_darwin.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b014/_pkg_.a # internal
+
+#
+# runtime/internal/atomic
+#
+
+mkdir -p $WORK/b015/
+cat >$WORK/b015/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/runtime/internal/atomic
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime/internal/atomic -trimpath "$WORK/b015=>" -I $WORK/b015/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -gensymabis -o $WORK/b015/symabis ./atomic_arm64.s
+cat >$WORK/b015/importcfg << 'EOF' # internal
+# import config
+packagefile internal/cpu=$WORK/b012/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b015/_pkg_.a -trimpath "$WORK/b015=>" -p runtime/internal/atomic -std -+ -buildid sXbMIQebScwA4ugJfCFL/sXbMIQebScwA4ugJfCFL -goversion go1.19.4 -symabis $WORK/b015/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b015/importcfg -pack -asmhdr $WORK/b015/go_asm.h /usr/local/go/src/runtime/internal/atomic/atomic_arm64.go /usr/local/go/src/runtime/internal/atomic/doc.go /usr/local/go/src/runtime/internal/atomic/stubs.go /usr/local/go/src/runtime/internal/atomic/types.go /usr/local/go/src/runtime/internal/atomic/types_64bit.go /usr/local/go/src/runtime/internal/atomic/unaligned.go
+cd /usr/local/go/src/runtime/internal/atomic
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime/internal/atomic -trimpath "$WORK/b015=>" -I $WORK/b015/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b015/atomic_arm64.o ./atomic_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b015/_pkg_.a $WORK/b015/atomic_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b015/_pkg_.a # internal
+
+#
+# runtime/internal/math
+#
+
+mkdir -p $WORK/b016/
+cat >$WORK/b016/importcfg << 'EOF' # internal
+# import config
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b016/_pkg_.a -trimpath "$WORK/b016=>" -p runtime/internal/math -std -+ -complete -buildid D1x5jiG8UamG6pL6d6Mj/D1x5jiG8UamG6pL6d6Mj -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b016/importcfg -pack /usr/local/go/src/runtime/internal/math/math.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b016/_pkg_.a # internal
+
+#
+# runtime/internal/sys
+#
+
+mkdir -p $WORK/b017/
+cat >$WORK/b017/importcfg << 'EOF' # internal
+# import config
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+packagefile internal/goos=$WORK/b014/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b017/_pkg_.a -trimpath "$WORK/b017=>" -p runtime/internal/sys -std -+ -complete -buildid luUFsw_52ruVQE6NUe3V/luUFsw_52ruVQE6NUe3V -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b017/importcfg -pack /usr/local/go/src/runtime/internal/sys/consts.go /usr/local/go/src/runtime/internal/sys/intrinsics.go /usr/local/go/src/runtime/internal/sys/intrinsics_common.go /usr/local/go/src/runtime/internal/sys/sys.go /usr/local/go/src/runtime/internal/sys/zversion.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b017/_pkg_.a # internal
+
+#
+# runtime
+#
+
+mkdir -p $WORK/b009/
+cat >$WORK/b009/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/runtime
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -gensymabis -o $WORK/b009/symabis ./asm.s ./asm_arm64.s ./atomic_arm64.s ./duff_arm64.s ./memclr_arm64.s ./memmove_arm64.s ./preempt_arm64.s ./rt0_darwin_arm64.s ./sys_darwin_arm64.s ./tls_arm64.s
+cat >$WORK/b009/importcfg << 'EOF' # internal
+# import config
+packagefile internal/abi=$WORK/b010/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile internal/cpu=$WORK/b012/_pkg_.a
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+packagefile internal/goexperiment=$WORK/b013/_pkg_.a
+packagefile internal/goos=$WORK/b014/_pkg_.a
+packagefile runtime/internal/atomic=$WORK/b015/_pkg_.a
+packagefile runtime/internal/math=$WORK/b016/_pkg_.a
+packagefile runtime/internal/sys=$WORK/b017/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b009/_pkg_.a -trimpath "$WORK/b009=>" -p runtime -std -+ -buildid 7GCUFcdtiSQXQ_iAHpnd/7GCUFcdtiSQXQ_iAHpnd -goversion go1.19.4 -symabis $WORK/b009/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b009/importcfg -pack -asmhdr $WORK/b009/go_asm.h /usr/local/go/src/runtime/alg.go /usr/local/go/src/runtime/asan0.go /usr/local/go/src/runtime/atomic_pointer.go /usr/local/go/src/runtime/cgo.go /usr/local/go/src/runtime/cgocall.go /usr/local/go/src/runtime/cgocallback.go /usr/local/go/src/runtime/cgocheck.go /usr/local/go/src/runtime/chan.go /usr/local/go/src/runtime/checkptr.go /usr/local/go/src/runtime/compiler.go /usr/local/go/src/runtime/complex.go /usr/local/go/src/runtime/cpuflags.go /usr/local/go/src/runtime/cpuflags_arm64.go /usr/local/go/src/runtime/cpuprof.go /usr/local/go/src/runtime/debug.go /usr/local/go/src/runtime/debugcall.go /usr/local/go/src/runtime/debuglog.go /usr/local/go/src/runtime/debuglog_off.go /usr/local/go/src/runtime/defs_darwin_arm64.go /usr/local/go/src/runtime/env_posix.go /usr/local/go/src/runtime/error.go /usr/local/go/src/runtime/extern.go /usr/local/go/src/runtime/fastlog2.go /usr/local/go/src/runtime/fastlog2table.go /usr/local/go/src/runtime/float.go /usr/local/go/src/runtime/hash64.go /usr/local/go/src/runtime/heapdump.go /usr/local/go/src/runtime/histogram.go /usr/local/go/src/runtime/iface.go /usr/local/go/src/runtime/lfstack.go /usr/local/go/src/runtime/lfstack_64bit.go /usr/local/go/src/runtime/lock_sema.go /usr/local/go/src/runtime/lockrank.go /usr/local/go/src/runtime/lockrank_off.go /usr/local/go/src/runtime/malloc.go /usr/local/go/src/runtime/map.go /usr/local/go/src/runtime/map_fast32.go /usr/local/go/src/runtime/map_fast64.go /usr/local/go/src/runtime/map_faststr.go /usr/local/go/src/runtime/mbarrier.go /usr/local/go/src/runtime/mbitmap.go /usr/local/go/src/runtime/mcache.go /usr/local/go/src/runtime/mcentral.go /usr/local/go/src/runtime/mcheckmark.go /usr/local/go/src/runtime/mem.go /usr/local/go/src/runtime/mem_darwin.go /usr/local/go/src/runtime/metrics.go /usr/local/go/src/runtime/mfinal.go /usr/local/go/src/runtime/mfixalloc.go /usr/local/go/src/runtime/mgc.go /usr/local/go/src/runtime/mgclimit.go /usr/local/go/src/runtime/mgcmark.go /usr/local/go/src/runtime/mgcpacer.go /usr/local/go/src/runtime/mgcscavenge.go /usr/local/go/src/runtime/mgcstack.go /usr/local/go/src/runtime/mgcsweep.go /usr/local/go/src/runtime/mgcwork.go /usr/local/go/src/runtime/mheap.go /usr/local/go/src/runtime/mpagealloc.go /usr/local/go/src/runtime/mpagealloc_64bit.go /usr/local/go/src/runtime/mpagecache.go /usr/local/go/src/runtime/mpallocbits.go /usr/local/go/src/runtime/mprof.go /usr/local/go/src/runtime/mranges.go /usr/local/go/src/runtime/msan0.go /usr/local/go/src/runtime/msize.go /usr/local/go/src/runtime/mspanset.go /usr/local/go/src/runtime/mstats.go /usr/local/go/src/runtime/mwbbuf.go /usr/local/go/src/runtime/nbpipe_pipe.go /usr/local/go/src/runtime/netpoll.go /usr/local/go/src/runtime/netpoll_kqueue.go /usr/local/go/src/runtime/os_darwin.go /usr/local/go/src/runtime/os_darwin_arm64.go /usr/local/go/src/runtime/os_nonopenbsd.go /usr/local/go/src/runtime/panic.go /usr/local/go/src/runtime/plugin.go /usr/local/go/src/runtime/preempt.go /usr/local/go/src/runtime/preempt_nonwindows.go /usr/local/go/src/runtime/print.go /usr/local/go/src/runtime/proc.go /usr/local/go/src/runtime/profbuf.go /usr/local/go/src/runtime/proflabel.go /usr/local/go/src/runtime/race0.go /usr/local/go/src/runtime/rdebug.go /usr/local/go/src/runtime/relax_stub.go /usr/local/go/src/runtime/runtime.go /usr/local/go/src/runtime/runtime1.go /usr/local/go/src/runtime/runtime2.go /usr/local/go/src/runtime/runtime_boring.go /usr/local/go/src/runtime/rwmutex.go /usr/local/go/src/runtime/select.go /usr/local/go/src/runtime/sema.go /usr/local/go/src/runtime/signal_arm64.go /usr/local/go/src/runtime/signal_darwin.go /usr/local/go/src/runtime/signal_darwin_arm64.go /usr/local/go/src/runtime/signal_unix.go /usr/local/go/src/runtime/sigqueue.go /usr/local/go/src/runtime/sizeclasses.go /usr/local/go/src/runtime/slice.go /usr/local/go/src/runtime/softfloat64.go /usr/local/go/src/runtime/stack.go /usr/local/go/src/runtime/string.go /usr/local/go/src/runtime/stubs.go /usr/local/go/src/runtime/stubs_arm64.go /usr/local/go/src/runtime/stubs_nonlinux.go /usr/local/go/src/runtime/symtab.go /usr/local/go/src/runtime/sys_arm64.go /usr/local/go/src/runtime/sys_darwin.go /usr/local/go/src/runtime/sys_darwin_arm64.go /usr/local/go/src/runtime/sys_libc.go /usr/local/go/src/runtime/sys_nonppc64x.go /usr/local/go/src/runtime/time.go /usr/local/go/src/runtime/time_nofake.go /usr/local/go/src/runtime/timestub.go /usr/local/go/src/runtime/tls_stub.go /usr/local/go/src/runtime/trace.go /usr/local/go/src/runtime/traceback.go /usr/local/go/src/runtime/type.go /usr/local/go/src/runtime/typekind.go /usr/local/go/src/runtime/utf8.go /usr/local/go/src/runtime/vdso_in_none.go /usr/local/go/src/runtime/write_err.go
+cp /usr/local/go/src/runtime/tls_arm64.h $WORK/b009/tls_GOARCH.h
+cd /usr/local/go/src/runtime
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/asm.o ./asm.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/asm_arm64.o ./asm_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/atomic_arm64.o ./atomic_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/duff_arm64.o ./duff_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/memclr_arm64.o ./memclr_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/memmove_arm64.o ./memmove_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/preempt_arm64.o ./preempt_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/rt0_darwin_arm64.o ./rt0_darwin_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/sys_darwin_arm64.o ./sys_darwin_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime -trimpath "$WORK/b009=>" -I $WORK/b009/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b009/tls_arm64.o ./tls_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b009/_pkg_.a $WORK/b009/asm.o $WORK/b009/asm_arm64.o $WORK/b009/atomic_arm64.o $WORK/b009/duff_arm64.o $WORK/b009/memclr_arm64.o $WORK/b009/memmove_arm64.o $WORK/b009/preempt_arm64.o $WORK/b009/rt0_darwin_arm64.o $WORK/b009/sys_darwin_arm64.o $WORK/b009/tls_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b009/_pkg_.a # internal
+
+#
+# internal/reflectlite
+#
+
+mkdir -p $WORK/b005/
+cat >$WORK/b005/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/internal/reflectlite
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/reflectlite -trimpath "$WORK/b005=>" -I $WORK/b005/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b005/symabis ./asm.s
+cat >$WORK/b005/importcfg << 'EOF' # internal
+# import config
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+packagefile internal/unsafeheader=$WORK/b007/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b005/_pkg_.a -trimpath "$WORK/b005=>" -p internal/reflectlite -std -buildid LwNEUj3FlvPAwvQQNVns/LwNEUj3FlvPAwvQQNVns -goversion go1.19.4 -symabis $WORK/b005/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b005/importcfg -pack -asmhdr $WORK/b005/go_asm.h /usr/local/go/src/internal/reflectlite/swapper.go /usr/local/go/src/internal/reflectlite/type.go /usr/local/go/src/internal/reflectlite/value.go
+cd /usr/local/go/src/internal/reflectlite
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/reflectlite -trimpath "$WORK/b005=>" -I $WORK/b005/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b005/asm.o ./asm.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b005/_pkg_.a $WORK/b005/asm.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b005/_pkg_.a # internal
+
+#
+# errors
+#
+
+mkdir -p $WORK/b004/
+cat >$WORK/b004/importcfg << 'EOF' # internal
+# import config
+packagefile internal/reflectlite=$WORK/b005/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b004/_pkg_.a -trimpath "$WORK/b004=>" -p errors -std -complete -buildid Ki0R5EF-oeJqSxDdjKyL/Ki0R5EF-oeJqSxDdjKyL -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b004/importcfg -pack /usr/local/go/src/errors/errors.go /usr/local/go/src/errors/wrap.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b004/_pkg_.a # internal
+
+#
+# internal/itoa
+#
+
+mkdir -p $WORK/b021/
+cat >$WORK/b021/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b021/_pkg_.a -trimpath "$WORK/b021=>" -p internal/itoa -std -complete -buildid 0BjyBXnJ0R0bWec8X7zt/0BjyBXnJ0R0bWec8X7zt -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b021/importcfg -pack /usr/local/go/src/internal/itoa/itoa.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b021/_pkg_.a # internal
+
+#
+# math/bits
+#
+
+mkdir -p $WORK/b023/
+cat >$WORK/b023/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b023/_pkg_.a -trimpath "$WORK/b023=>" -p math/bits -std -complete -buildid nusGXj3GxEkVrSvxXfte/nusGXj3GxEkVrSvxXfte -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b023/importcfg -pack /usr/local/go/src/math/bits/bits.go /usr/local/go/src/math/bits/bits_errors.go /usr/local/go/src/math/bits/bits_tables.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b023/_pkg_.a # internal
+
+#
+# math
+#
+
+mkdir -p $WORK/b022/
+cat >$WORK/b022/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/math
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b022/symabis ./dim_arm64.s ./exp_arm64.s ./floor_arm64.s ./modf_arm64.s ./sqrt_arm64.s
+cat >$WORK/b022/importcfg << 'EOF' # internal
+# import config
+packagefile math/bits=$WORK/b023/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b022/_pkg_.a -trimpath "$WORK/b022=>" -p math -std -buildid yqcYFPy8rHwprkDGVBmW/yqcYFPy8rHwprkDGVBmW -goversion go1.19.4 -symabis $WORK/b022/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b022/importcfg -pack -asmhdr $WORK/b022/go_asm.h /usr/local/go/src/math/abs.go /usr/local/go/src/math/acosh.go /usr/local/go/src/math/asin.go /usr/local/go/src/math/asinh.go /usr/local/go/src/math/atan.go /usr/local/go/src/math/atan2.go /usr/local/go/src/math/atanh.go /usr/local/go/src/math/bits.go /usr/local/go/src/math/cbrt.go /usr/local/go/src/math/const.go /usr/local/go/src/math/copysign.go /usr/local/go/src/math/dim.go /usr/local/go/src/math/dim_asm.go /usr/local/go/src/math/erf.go /usr/local/go/src/math/erfinv.go /usr/local/go/src/math/exp.go /usr/local/go/src/math/exp2_asm.go /usr/local/go/src/math/exp_asm.go /usr/local/go/src/math/expm1.go /usr/local/go/src/math/floor.go /usr/local/go/src/math/floor_asm.go /usr/local/go/src/math/fma.go /usr/local/go/src/math/frexp.go /usr/local/go/src/math/gamma.go /usr/local/go/src/math/hypot.go /usr/local/go/src/math/hypot_noasm.go /usr/local/go/src/math/j0.go /usr/local/go/src/math/j1.go /usr/local/go/src/math/jn.go /usr/local/go/src/math/ldexp.go /usr/local/go/src/math/lgamma.go /usr/local/go/src/math/log.go /usr/local/go/src/math/log10.go /usr/local/go/src/math/log1p.go /usr/local/go/src/math/log_stub.go /usr/local/go/src/math/logb.go /usr/local/go/src/math/mod.go /usr/local/go/src/math/modf.go /usr/local/go/src/math/modf_asm.go /usr/local/go/src/math/nextafter.go /usr/local/go/src/math/pow.go /usr/local/go/src/math/pow10.go /usr/local/go/src/math/remainder.go /usr/local/go/src/math/signbit.go /usr/local/go/src/math/sin.go /usr/local/go/src/math/sincos.go /usr/local/go/src/math/sinh.go /usr/local/go/src/math/sqrt.go /usr/local/go/src/math/sqrt_asm.go /usr/local/go/src/math/stubs.go /usr/local/go/src/math/tan.go /usr/local/go/src/math/tanh.go /usr/local/go/src/math/trig_reduce.go /usr/local/go/src/math/unsafe.go
+cd /usr/local/go/src/math
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b022/dim_arm64.o ./dim_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b022/exp_arm64.o ./exp_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b022/floor_arm64.o ./floor_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b022/modf_arm64.o ./modf_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p math -trimpath "$WORK/b022=>" -I $WORK/b022/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b022/sqrt_arm64.o ./sqrt_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b022/_pkg_.a $WORK/b022/dim_arm64.o $WORK/b022/exp_arm64.o $WORK/b022/floor_arm64.o $WORK/b022/modf_arm64.o $WORK/b022/sqrt_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b022/_pkg_.a # internal
+
+#
+# unicode/utf8
+#
+
+mkdir -p $WORK/b025/
+cat >$WORK/b025/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b025/_pkg_.a -trimpath "$WORK/b025=>" -p unicode/utf8 -std -complete -buildid L3uFp90ox874q3FiIwqN/L3uFp90ox874q3FiIwqN -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b025/importcfg -pack /usr/local/go/src/unicode/utf8/utf8.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b025/_pkg_.a # internal
+
+#
+# strconv
+#
+
+mkdir -p $WORK/b024/
+cat >$WORK/b024/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile math/bits=$WORK/b023/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b024/_pkg_.a -trimpath "$WORK/b024=>" -p strconv -std -complete -buildid SpF9OtNHa0HjWUy5GGym/SpF9OtNHa0HjWUy5GGym -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b024/importcfg -pack /usr/local/go/src/strconv/atob.go /usr/local/go/src/strconv/atoc.go /usr/local/go/src/strconv/atof.go /usr/local/go/src/strconv/atoi.go /usr/local/go/src/strconv/bytealg.go /usr/local/go/src/strconv/ctoa.go /usr/local/go/src/strconv/decimal.go /usr/local/go/src/strconv/doc.go /usr/local/go/src/strconv/eisel_lemire.go /usr/local/go/src/strconv/ftoa.go /usr/local/go/src/strconv/ftoaryu.go /usr/local/go/src/strconv/isprint.go /usr/local/go/src/strconv/itoa.go /usr/local/go/src/strconv/quote.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b024/_pkg_.a # internal
+
+#
+# internal/race
+#
+
+mkdir -p $WORK/b027/
+cat >$WORK/b027/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b027/_pkg_.a -trimpath "$WORK/b027=>" -p internal/race -std -complete -buildid PnFXHuZ1h-sf1KYIB0bb/PnFXHuZ1h-sf1KYIB0bb -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b027/importcfg -pack /usr/local/go/src/internal/race/doc.go /usr/local/go/src/internal/race/norace.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b027/_pkg_.a # internal
+
+#
+# sync/atomic
+#
+
+mkdir -p $WORK/b028/
+cat >$WORK/b028/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/sync/atomic
+/usr/local/go/pkg/tool/darwin_arm64/asm -p sync/atomic -trimpath "$WORK/b028=>" -I $WORK/b028/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b028/symabis ./asm.s
+cat >$WORK/b028/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b028/_pkg_.a -trimpath "$WORK/b028=>" -p sync/atomic -std -buildid wzhE4wXyAdn948GczPxR/wzhE4wXyAdn948GczPxR -goversion go1.19.4 -symabis $WORK/b028/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b028/importcfg -pack -asmhdr $WORK/b028/go_asm.h /usr/local/go/src/sync/atomic/doc.go /usr/local/go/src/sync/atomic/type.go /usr/local/go/src/sync/atomic/value.go
+cd /usr/local/go/src/sync/atomic
+/usr/local/go/pkg/tool/darwin_arm64/asm -p sync/atomic -trimpath "$WORK/b028=>" -I $WORK/b028/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b028/asm.o ./asm.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b028/_pkg_.a $WORK/b028/asm.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b028/_pkg_.a # internal
+
+#
+# sync
+#
+
+mkdir -p $WORK/b026/
+cat >$WORK/b026/importcfg << 'EOF' # internal
+# import config
+packagefile internal/race=$WORK/b027/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b026/_pkg_.a -trimpath "$WORK/b026=>" -p sync -std -buildid UiYwLzM9dKbrcRHfi_vC/UiYwLzM9dKbrcRHfi_vC -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b026/importcfg -pack /usr/local/go/src/sync/cond.go /usr/local/go/src/sync/map.go /usr/local/go/src/sync/mutex.go /usr/local/go/src/sync/once.go /usr/local/go/src/sync/pool.go /usr/local/go/src/sync/poolqueue.go /usr/local/go/src/sync/runtime.go /usr/local/go/src/sync/runtime2.go /usr/local/go/src/sync/rwmutex.go /usr/local/go/src/sync/waitgroup.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b026/_pkg_.a # internal
+
+#
+# unicode
+#
+
+mkdir -p $WORK/b029/
+cat >$WORK/b029/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b029/_pkg_.a -trimpath "$WORK/b029=>" -p unicode -std -complete -buildid nqF6ZmKjxyMy7v7xPrso/nqF6ZmKjxyMy7v7xPrso -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b029/importcfg -pack /usr/local/go/src/unicode/casetables.go /usr/local/go/src/unicode/digit.go /usr/local/go/src/unicode/graphic.go /usr/local/go/src/unicode/letter.go /usr/local/go/src/unicode/tables.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b029/_pkg_.a # internal
+
+#
+# reflect
+#
+
+mkdir -p $WORK/b020/
+cat >$WORK/b020/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/reflect
+/usr/local/go/pkg/tool/darwin_arm64/asm -p reflect -trimpath "$WORK/b020=>" -I $WORK/b020/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -gensymabis -o $WORK/b020/symabis ./asm_arm64.s
+cat >$WORK/b020/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/abi=$WORK/b010/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile internal/unsafeheader=$WORK/b007/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b020/_pkg_.a -trimpath "$WORK/b020=>" -p reflect -std -buildid cxUpM_57xjf0L6cMFfqQ/cxUpM_57xjf0L6cMFfqQ -goversion go1.19.4 -symabis $WORK/b020/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b020/importcfg -pack -asmhdr $WORK/b020/go_asm.h /usr/local/go/src/reflect/abi.go /usr/local/go/src/reflect/deepequal.go /usr/local/go/src/reflect/float32reg_generic.go /usr/local/go/src/reflect/makefunc.go /usr/local/go/src/reflect/swapper.go /usr/local/go/src/reflect/type.go /usr/local/go/src/reflect/value.go /usr/local/go/src/reflect/visiblefields.go
+cd /usr/local/go/src/reflect
+/usr/local/go/pkg/tool/darwin_arm64/asm -p reflect -trimpath "$WORK/b020=>" -I $WORK/b020/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b020/asm_arm64.o ./asm_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b020/_pkg_.a $WORK/b020/asm_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b020/_pkg_.a # internal
+
+#
+# sort
+#
+
+mkdir -p $WORK/b030/
+cat >$WORK/b030/importcfg << 'EOF' # internal
+# import config
+packagefile internal/reflectlite=$WORK/b005/_pkg_.a
+packagefile math/bits=$WORK/b023/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b030/_pkg_.a -trimpath "$WORK/b030=>" -p sort -std -complete -buildid S-U8yKngnpP0TLXS__wk/S-U8yKngnpP0TLXS__wk -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b030/importcfg -pack /usr/local/go/src/sort/search.go /usr/local/go/src/sort/slice.go /usr/local/go/src/sort/slice_go113.go /usr/local/go/src/sort/sort.go /usr/local/go/src/sort/zsortfunc.go /usr/local/go/src/sort/zsortinterface.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b030/_pkg_.a # internal
+
+#
+# internal/fmtsort
+#
+
+mkdir -p $WORK/b019/
+cat >$WORK/b019/importcfg << 'EOF' # internal
+# import config
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b019/_pkg_.a -trimpath "$WORK/b019=>" -p internal/fmtsort -std -complete -buildid ZsWwNyLtFbP924UvyuHI/ZsWwNyLtFbP924UvyuHI -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b019/importcfg -pack /usr/local/go/src/internal/fmtsort/sort.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b019/_pkg_.a # internal
+
+#
+# io
+#
+
+mkdir -p $WORK/b031/
+cat >$WORK/b031/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b031/_pkg_.a -trimpath "$WORK/b031=>" -p io -std -complete -buildid LZvqCXnKLJASpUsNQml2/LZvqCXnKLJASpUsNQml2 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b031/importcfg -pack /usr/local/go/src/io/io.go /usr/local/go/src/io/multi.go /usr/local/go/src/io/pipe.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b031/_pkg_.a # internal
+
+#
+# internal/oserror
+#
+
+mkdir -p $WORK/b033/
+cat >$WORK/b033/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b033/_pkg_.a -trimpath "$WORK/b033=>" -p internal/oserror -std -complete -buildid DBAP7TOXCgYLP2p5CWnI/DBAP7TOXCgYLP2p5CWnI -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b033/importcfg -pack /usr/local/go/src/internal/oserror/errors.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b033/_pkg_.a # internal
+
+#
+# syscall
+#
+
+mkdir -p $WORK/b036/
+cat >$WORK/b036/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/syscall
+/usr/local/go/pkg/tool/darwin_arm64/asm -p syscall -trimpath "$WORK/b036=>" -I $WORK/b036/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -gensymabis -o $WORK/b036/symabis ./asm_darwin_arm64.s ./zsyscall_darwin_arm64.s
+cat >$WORK/b036/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/abi=$WORK/b010/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile internal/oserror=$WORK/b033/_pkg_.a
+packagefile internal/race=$WORK/b027/_pkg_.a
+packagefile internal/unsafeheader=$WORK/b007/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b036/_pkg_.a -trimpath "$WORK/b036=>" -p syscall -std -buildid we1DarzQpfEkbzuuFUPj/we1DarzQpfEkbzuuFUPj -goversion go1.19.4 -symabis $WORK/b036/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b036/importcfg -pack -asmhdr $WORK/b036/go_asm.h /usr/local/go/src/syscall/asan0.go /usr/local/go/src/syscall/bpf_darwin.go /usr/local/go/src/syscall/dirent.go /usr/local/go/src/syscall/endian_little.go /usr/local/go/src/syscall/env_unix.go /usr/local/go/src/syscall/exec_libc2.go /usr/local/go/src/syscall/exec_unix.go /usr/local/go/src/syscall/flock_darwin.go /usr/local/go/src/syscall/forkpipe.go /usr/local/go/src/syscall/msan0.go /usr/local/go/src/syscall/net.go /usr/local/go/src/syscall/ptrace_darwin.go /usr/local/go/src/syscall/route_bsd.go /usr/local/go/src/syscall/route_darwin.go /usr/local/go/src/syscall/sockcmsg_unix.go /usr/local/go/src/syscall/sockcmsg_unix_other.go /usr/local/go/src/syscall/syscall.go /usr/local/go/src/syscall/syscall_bsd.go /usr/local/go/src/syscall/syscall_darwin.go /usr/local/go/src/syscall/syscall_darwin_arm64.go /usr/local/go/src/syscall/syscall_unix.go /usr/local/go/src/syscall/time_nofake.go /usr/local/go/src/syscall/timestruct.go /usr/local/go/src/syscall/zerrors_darwin_arm64.go /usr/local/go/src/syscall/zsyscall_darwin_arm64.go /usr/local/go/src/syscall/zsysnum_darwin_arm64.go /usr/local/go/src/syscall/ztypes_darwin_arm64.go
+cd /usr/local/go/src/syscall
+/usr/local/go/pkg/tool/darwin_arm64/asm -p syscall -trimpath "$WORK/b036=>" -I $WORK/b036/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b036/asm_darwin_arm64.o ./asm_darwin_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/asm -p syscall -trimpath "$WORK/b036=>" -I $WORK/b036/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -compiling-runtime -o $WORK/b036/zsyscall_darwin_arm64.o ./zsyscall_darwin_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b036/_pkg_.a $WORK/b036/asm_darwin_arm64.o $WORK/b036/zsyscall_darwin_arm64.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b036/_pkg_.a # internal
+
+#
+# internal/syscall/unix
+#
+
+mkdir -p $WORK/b035/
+cat >$WORK/b035/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/internal/syscall/unix
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/syscall/unix -trimpath "$WORK/b035=>" -I $WORK/b035/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b035/symabis ./asm_darwin.s
+cat >$WORK/b035/importcfg << 'EOF' # internal
+# import config
+packagefile internal/abi=$WORK/b010/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b035/_pkg_.a -trimpath "$WORK/b035=>" -p internal/syscall/unix -std -buildid qerElh7pCVUgkhb5Nd3i/qerElh7pCVUgkhb5Nd3i -goversion go1.19.4 -symabis $WORK/b035/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b035/importcfg -pack -asmhdr $WORK/b035/go_asm.h /usr/local/go/src/internal/syscall/unix/at_darwin.go /usr/local/go/src/internal/syscall/unix/at_sysnum_darwin.go /usr/local/go/src/internal/syscall/unix/getentropy_darwin.go /usr/local/go/src/internal/syscall/unix/net.go /usr/local/go/src/internal/syscall/unix/nonblocking_libc.go
+cd /usr/local/go/src/internal/syscall/unix
+/usr/local/go/pkg/tool/darwin_arm64/asm -p internal/syscall/unix -trimpath "$WORK/b035=>" -I $WORK/b035/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b035/asm_darwin.o ./asm_darwin.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b035/_pkg_.a $WORK/b035/asm_darwin.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b035/_pkg_.a # internal
+
+#
+# time
+#
+
+mkdir -p $WORK/b037/
+cat >$WORK/b037/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b037/_pkg_.a -trimpath "$WORK/b037=>" -p time -std -buildid -Ad7XVU0tcd93hx4yiAn/-Ad7XVU0tcd93hx4yiAn -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b037/importcfg -pack /usr/local/go/src/time/format.go /usr/local/go/src/time/sleep.go /usr/local/go/src/time/sys_unix.go /usr/local/go/src/time/tick.go /usr/local/go/src/time/time.go /usr/local/go/src/time/zoneinfo.go /usr/local/go/src/time/zoneinfo_goroot.go /usr/local/go/src/time/zoneinfo_read.go /usr/local/go/src/time/zoneinfo_unix.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b037/_pkg_.a # internal
+
+#
+# internal/poll
+#
+
+mkdir -p $WORK/b034/
+cat >$WORK/b034/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/syscall/unix=$WORK/b035/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b034/_pkg_.a -trimpath "$WORK/b034=>" -p internal/poll -std -buildid P2mpGFvga3PmPRTlYc0j/P2mpGFvga3PmPRTlYc0j -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b034/importcfg -pack /usr/local/go/src/internal/poll/errno_unix.go /usr/local/go/src/internal/poll/fcntl_libc.go /usr/local/go/src/internal/poll/fd.go /usr/local/go/src/internal/poll/fd_fsync_darwin.go /usr/local/go/src/internal/poll/fd_mutex.go /usr/local/go/src/internal/poll/fd_opendir_darwin.go /usr/local/go/src/internal/poll/fd_poll_runtime.go /usr/local/go/src/internal/poll/fd_posix.go /usr/local/go/src/internal/poll/fd_unix.go /usr/local/go/src/internal/poll/fd_writev_darwin.go /usr/local/go/src/internal/poll/hook_unix.go /usr/local/go/src/internal/poll/iovec_unix.go /usr/local/go/src/internal/poll/sendfile_bsd.go /usr/local/go/src/internal/poll/sockopt.go /usr/local/go/src/internal/poll/sockopt_unix.go /usr/local/go/src/internal/poll/sockoptip.go /usr/local/go/src/internal/poll/sys_cloexec.go /usr/local/go/src/internal/poll/writev.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b034/_pkg_.a # internal
+
+#
+# internal/safefilepath
+#
+
+mkdir -p $WORK/b038/
+cat >$WORK/b038/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b038/_pkg_.a -trimpath "$WORK/b038=>" -p internal/safefilepath -std -complete -buildid _5-MHh7YI2a_CCAVzoAQ/_5-MHh7YI2a_CCAVzoAQ -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b038/importcfg -pack /usr/local/go/src/internal/safefilepath/path.go /usr/local/go/src/internal/safefilepath/path_other.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b038/_pkg_.a # internal
+
+#
+# internal/syscall/execenv
+#
+
+mkdir -p $WORK/b039/
+cat >$WORK/b039/importcfg << 'EOF' # internal
+# import config
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b039/_pkg_.a -trimpath "$WORK/b039=>" -p internal/syscall/execenv -std -complete -buildid KAif2SDPArtQI1uNDpwZ/KAif2SDPArtQI1uNDpwZ -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b039/importcfg -pack /usr/local/go/src/internal/syscall/execenv/execenv_default.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b039/_pkg_.a # internal
+
+#
+# internal/testlog
+#
+
+mkdir -p $WORK/b040/
+cat >$WORK/b040/importcfg << 'EOF' # internal
+# import config
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b040/_pkg_.a -trimpath "$WORK/b040=>" -p internal/testlog -std -complete -buildid PNbLt8gLdEh3SBDpMVvP/PNbLt8gLdEh3SBDpMVvP -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b040/importcfg -pack /usr/local/go/src/internal/testlog/exit.go /usr/local/go/src/internal/testlog/log.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b040/_pkg_.a # internal
+
+#
+# path
+#
+
+mkdir -p $WORK/b042/
+cat >$WORK/b042/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b042/_pkg_.a -trimpath "$WORK/b042=>" -p path -std -complete -buildid hmyb313mJEeR9L4AtAQ0/hmyb313mJEeR9L4AtAQ0 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b042/importcfg -pack /usr/local/go/src/path/match.go /usr/local/go/src/path/path.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b042/_pkg_.a # internal
+
+#
+# io/fs
+#
+
+mkdir -p $WORK/b041/
+cat >$WORK/b041/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/oserror=$WORK/b033/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile path=$WORK/b042/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b041/_pkg_.a -trimpath "$WORK/b041=>" -p io/fs -std -complete -buildid TT6jEWi9n7tpJu1rQ9aN/TT6jEWi9n7tpJu1rQ9aN -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b041/importcfg -pack /usr/local/go/src/io/fs/fs.go /usr/local/go/src/io/fs/glob.go /usr/local/go/src/io/fs/readdir.go /usr/local/go/src/io/fs/readfile.go /usr/local/go/src/io/fs/stat.go /usr/local/go/src/io/fs/sub.go /usr/local/go/src/io/fs/walk.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b041/_pkg_.a # internal
+
+#
+# os
+#
+
+mkdir -p $WORK/b032/
+cat >$WORK/b032/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile internal/oserror=$WORK/b033/_pkg_.a
+packagefile internal/poll=$WORK/b034/_pkg_.a
+packagefile internal/safefilepath=$WORK/b038/_pkg_.a
+packagefile internal/syscall/execenv=$WORK/b039/_pkg_.a
+packagefile internal/syscall/unix=$WORK/b035/_pkg_.a
+packagefile internal/testlog=$WORK/b040/_pkg_.a
+packagefile internal/unsafeheader=$WORK/b007/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile io/fs=$WORK/b041/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b032/_pkg_.a -trimpath "$WORK/b032=>" -p os -std -buildid A0Q4DLSA2YMa1xGMOh8J/A0Q4DLSA2YMa1xGMOh8J -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b032/importcfg -pack /usr/local/go/src/os/dir.go /usr/local/go/src/os/dir_darwin.go /usr/local/go/src/os/endian_little.go /usr/local/go/src/os/env.go /usr/local/go/src/os/error.go /usr/local/go/src/os/error_errno.go /usr/local/go/src/os/error_posix.go /usr/local/go/src/os/exec.go /usr/local/go/src/os/exec_posix.go /usr/local/go/src/os/exec_unix.go /usr/local/go/src/os/executable.go /usr/local/go/src/os/executable_darwin.go /usr/local/go/src/os/file.go /usr/local/go/src/os/file_posix.go /usr/local/go/src/os/file_unix.go /usr/local/go/src/os/getwd.go /usr/local/go/src/os/path.go /usr/local/go/src/os/path_unix.go /usr/local/go/src/os/pipe_unix.go /usr/local/go/src/os/proc.go /usr/local/go/src/os/rawconn.go /usr/local/go/src/os/readfrom_stub.go /usr/local/go/src/os/removeall_at.go /usr/local/go/src/os/rlimit.go /usr/local/go/src/os/rlimit_darwin.go /usr/local/go/src/os/stat.go /usr/local/go/src/os/stat_darwin.go /usr/local/go/src/os/stat_unix.go /usr/local/go/src/os/sticky_bsd.go /usr/local/go/src/os/str.go /usr/local/go/src/os/sys.go /usr/local/go/src/os/sys_bsd.go /usr/local/go/src/os/sys_unix.go /usr/local/go/src/os/tempfile.go /usr/local/go/src/os/types.go /usr/local/go/src/os/types_unix.go /usr/local/go/src/os/wait_unimp.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b032/_pkg_.a # internal
+
+#
+# fmt
+#
+
+mkdir -p $WORK/b018/
+cat >$WORK/b018/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/fmtsort=$WORK/b019/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b018/_pkg_.a -trimpath "$WORK/b018=>" -p fmt -std -complete -buildid 6BJ5NrPiabk66SGEOyOA/6BJ5NrPiabk66SGEOyOA -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b018/importcfg -pack /usr/local/go/src/fmt/doc.go /usr/local/go/src/fmt/errors.go /usr/local/go/src/fmt/format.go /usr/local/go/src/fmt/print.go /usr/local/go/src/fmt/scan.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b018/_pkg_.a # internal
+
+#
+# strings
+#
+
+mkdir -p $WORK/b043/
+cat >$WORK/b043/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b043/_pkg_.a -trimpath "$WORK/b043=>" -p strings -std -complete -buildid PCK-Q1fdscEKNM3UNu9Q/PCK-Q1fdscEKNM3UNu9Q -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b043/importcfg -pack /usr/local/go/src/strings/builder.go /usr/local/go/src/strings/clone.go /usr/local/go/src/strings/compare.go /usr/local/go/src/strings/reader.go /usr/local/go/src/strings/replace.go /usr/local/go/src/strings/search.go /usr/local/go/src/strings/strings.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b043/_pkg_.a # internal
+
+#
+# flag
+#
+
+mkdir -p $WORK/b002/
+cat >$WORK/b002/importcfg << 'EOF' # internal
+# import config
+packagefile encoding=$WORK/b003/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b002/_pkg_.a -trimpath "$WORK/b002=>" -p flag -std -complete -buildid GeUU7k2yBE23IQkZZvak/GeUU7k2yBE23IQkZZvak -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b002/importcfg -pack /usr/local/go/src/flag/flag.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b002/_pkg_.a # internal
+
+#
+# bytes
+#
+
+mkdir -p $WORK/b045/
+cat >$WORK/b045/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b045/_pkg_.a -trimpath "$WORK/b045=>" -p bytes -std -buildid l8ElZbR0bYMX-z8mF1AY/l8ElZbR0bYMX-z8mF1AY -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b045/importcfg -pack /usr/local/go/src/bytes/buffer.go /usr/local/go/src/bytes/bytes.go /usr/local/go/src/bytes/reader.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b045/_pkg_.a # internal
+
+#
+# bufio
+#
+
+mkdir -p $WORK/b047/
+cat >$WORK/b047/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b047/_pkg_.a -trimpath "$WORK/b047=>" -p bufio -std -complete -buildid _J_al9d8RlMxm-hodJOl/_J_al9d8RlMxm-hodJOl -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b047/importcfg -pack /usr/local/go/src/bufio/bufio.go /usr/local/go/src/bufio/scan.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b047/_pkg_.a # internal
+
+#
+# container/list
+#
+
+mkdir -p $WORK/b048/
+cat >$WORK/b048/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b048/_pkg_.a -trimpath "$WORK/b048=>" -p container/list -std -complete -buildid XQhaTWMMPzOSgDW_AOR8/XQhaTWMMPzOSgDW_AOR8 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b048/importcfg -pack /usr/local/go/src/container/list/list.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b048/_pkg_.a # internal
+
+#
+# encoding/binary
+#
+
+mkdir -p $WORK/b049/
+cat >$WORK/b049/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b049/_pkg_.a -trimpath "$WORK/b049=>" -p encoding/binary -std -complete -buildid 8agg6xUg_sUUb74-La04/8agg6xUg_sUUb74-La04 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b049/importcfg -pack /usr/local/go/src/encoding/binary/binary.go /usr/local/go/src/encoding/binary/varint.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b049/_pkg_.a # internal
+
+#
+# context
+#
+
+mkdir -p $WORK/b051/
+cat >$WORK/b051/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/reflectlite=$WORK/b005/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b051/_pkg_.a -trimpath "$WORK/b051=>" -p context -std -complete -buildid aXCQ5wZxREguQJ9Jfkyg/aXCQ5wZxREguQJ9Jfkyg -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b051/importcfg -pack /usr/local/go/src/context/context.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b051/_pkg_.a # internal
+
+#
+# vendor/golang.org/x/net/dns/dnsmessage
+#
+
+mkdir -p $WORK/b052/
+cat >$WORK/b052/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b052/_pkg_.a -trimpath "$WORK/b052=>" -p vendor/golang.org/x/net/dns/dnsmessage -std -complete -buildid vWB6biObV0tI42Dnxr1m/vWB6biObV0tI42Dnxr1m -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b052/importcfg -pack /usr/local/go/src/vendor/golang.org/x/net/dns/dnsmessage/message.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b052/_pkg_.a # internal
+
+#
+# vendor/golang.org/x/net/route
+#
+
+mkdir -p $WORK/b053/
+cat >$WORK/b053/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/vendor/golang.org/x/net/route
+/usr/local/go/pkg/tool/darwin_arm64/asm -p vendor/golang.org/x/net/route -trimpath "$WORK/b053=>" -I $WORK/b053/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b053/symabis ./empty.s
+cat >$WORK/b053/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b053/_pkg_.a -trimpath "$WORK/b053=>" -p vendor/golang.org/x/net/route -std -buildid oNOUhkozX7cx0y4WwP7l/oNOUhkozX7cx0y4WwP7l -goversion go1.19.4 -symabis $WORK/b053/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b053/importcfg -pack -asmhdr $WORK/b053/go_asm.h /usr/local/go/src/vendor/golang.org/x/net/route/address.go /usr/local/go/src/vendor/golang.org/x/net/route/binary.go /usr/local/go/src/vendor/golang.org/x/net/route/interface.go /usr/local/go/src/vendor/golang.org/x/net/route/interface_classic.go /usr/local/go/src/vendor/golang.org/x/net/route/interface_multicast.go /usr/local/go/src/vendor/golang.org/x/net/route/message.go /usr/local/go/src/vendor/golang.org/x/net/route/route.go /usr/local/go/src/vendor/golang.org/x/net/route/route_classic.go /usr/local/go/src/vendor/golang.org/x/net/route/sys.go /usr/local/go/src/vendor/golang.org/x/net/route/sys_darwin.go /usr/local/go/src/vendor/golang.org/x/net/route/syscall.go /usr/local/go/src/vendor/golang.org/x/net/route/zsys_darwin.go
+cd /usr/local/go/src/vendor/golang.org/x/net/route
+/usr/local/go/pkg/tool/darwin_arm64/asm -p vendor/golang.org/x/net/route -trimpath "$WORK/b053=>" -I $WORK/b053/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b053/empty.o ./empty.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b053/_pkg_.a $WORK/b053/empty.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b053/_pkg_.a # internal
+
+#
+# internal/godebug
+#
+
+mkdir -p $WORK/b054/
+cat >$WORK/b054/importcfg << 'EOF' # internal
+# import config
+packagefile os=$WORK/b032/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b054/_pkg_.a -trimpath "$WORK/b054=>" -p internal/godebug -std -complete -buildid JXP0M1O2sMpgUR9IEatM/JXP0M1O2sMpgUR9IEatM -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b054/importcfg -pack /usr/local/go/src/internal/godebug/godebug.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b054/_pkg_.a # internal
+
+#
+# internal/nettrace
+#
+
+mkdir -p $WORK/b055/
+cat >$WORK/b055/importcfg << 'EOF' # internal
+# import config
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b055/_pkg_.a -trimpath "$WORK/b055=>" -p internal/nettrace -std -complete -buildid _X2_xpXSMYEch7Akw3qm/_X2_xpXSMYEch7Akw3qm -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b055/importcfg -pack /usr/local/go/src/internal/nettrace/nettrace.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b055/_pkg_.a # internal
+
+#
+# internal/singleflight
+#
+
+mkdir -p $WORK/b056/
+cat >$WORK/b056/importcfg << 'EOF' # internal
+# import config
+packagefile sync=$WORK/b026/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b056/_pkg_.a -trimpath "$WORK/b056=>" -p internal/singleflight -std -complete -buildid EaA9JRfEj82HnYt9mJhw/EaA9JRfEj82HnYt9mJhw -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b056/importcfg -pack /usr/local/go/src/internal/singleflight/singleflight.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b056/_pkg_.a # internal
+
+#
+# internal/intern
+#
+
+mkdir -p $WORK/b058/
+cat >$WORK/b058/importcfg << 'EOF' # internal
+# import config
+packagefile internal/godebug=$WORK/b054/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b058/_pkg_.a -trimpath "$WORK/b058=>" -p internal/intern -std -complete -buildid Jgxr7WvmBIG9ALkUDXfd/Jgxr7WvmBIG9ALkUDXfd -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b058/importcfg -pack /usr/local/go/src/internal/intern/intern.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b058/_pkg_.a # internal
+
+#
+# net/netip
+#
+
+mkdir -p $WORK/b057/
+cat >$WORK/b057/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile internal/intern=$WORK/b058/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile math/bits=$WORK/b023/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b057/_pkg_.a -trimpath "$WORK/b057=>" -p net/netip -std -complete -buildid hTZBi6k2Yzq3RIioUT9S/hTZBi6k2Yzq3RIioUT9S -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b057/importcfg -pack /usr/local/go/src/net/netip/leaf_alts.go /usr/local/go/src/net/netip/netip.go /usr/local/go/src/net/netip/uint128.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b057/_pkg_.a # internal
+
+#
+# runtime/cgo
+#
+
+mkdir -p $WORK/b059/
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' CGO_LDFLAGS='"-g" "-O2" "-framework" "CoreFoundation"' /usr/local/go/pkg/tool/darwin_arm64/cgo -objdir $WORK/b059/ -importpath runtime/cgo -import_runtime_cgo=false -import_syscall=false -- -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector ./cgo.go
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b059
+TERM='dumb' clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -Wall -Werror -fno-stack-protector -o ./_x001.o -c _cgo_export.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b059
+TERM='dumb' clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -Wall -Werror -fno-stack-protector -o ./_x002.o -c cgo.cgo2.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x003.o -c gcc_context.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x004.o -c gcc_darwin_arm64.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x005.o -c gcc_libinit.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x006.o -c gcc_setenv.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x007.o -c gcc_traceback.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x008.o -c gcc_util.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' clang -I . -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I $WORK/b059/ -g -O2 -Wall -Werror -fno-stack-protector -o $WORK/b059/_x009.o -c gcc_arm64.S
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b059
+TERM='dumb' clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -Wall -Werror -fno-stack-protector -o ./_cgo_main.o -c _cgo_main.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+cd /Users/kamal/codes/personal/go_learning/my_cli
+TERM='dumb' clang -I /usr/local/go/src/runtime/cgo -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -o $WORK/b059/_cgo_.o $WORK/b059/_cgo_main.o $WORK/b059/_x001.o $WORK/b059/_x002.o $WORK/b059/_x003.o $WORK/b059/_x004.o $WORK/b059/_x005.o $WORK/b059/_x006.o $WORK/b059/_x007.o $WORK/b059/_x008.o $WORK/b059/_x009.o -g -O2 -framework CoreFoundation
+TERM='dumb' /usr/local/go/pkg/tool/darwin_arm64/cgo -dynpackage cgo -dynimport $WORK/b059/_cgo_.o -dynout $WORK/b059/_cgo_import.go -dynlinker
+cat >$WORK/b059/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/runtime/cgo
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime/cgo -trimpath "$WORK/b059=>" -I $WORK/b059/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b059/symabis ./asm_arm64.s
+cat >$WORK/b059/importcfg << 'EOF' # internal
+# import config
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b059/_pkg_.a -trimpath "$WORK/b059=>" -p runtime/cgo -std -buildid SmT7Dr8kCrcE-sWo4jFd/SmT7Dr8kCrcE-sWo4jFd -goversion go1.19.4 -symabis $WORK/b059/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b059/importcfg -pack -asmhdr $WORK/b059/go_asm.h /usr/local/go/src/runtime/cgo/callbacks.go /usr/local/go/src/runtime/cgo/callbacks_traceback.go /usr/local/go/src/runtime/cgo/handle.go /usr/local/go/src/runtime/cgo/iscgo.go /usr/local/go/src/runtime/cgo/setenv.go $WORK/b059/_cgo_gotypes.go $WORK/b059/cgo.cgo1.go $WORK/b059/_cgo_import.go
+cp /usr/local/go/src/runtime/cgo/abi_arm64.h $WORK/b059/abi_GOARCH.h
+cd /usr/local/go/src/runtime/cgo
+/usr/local/go/pkg/tool/darwin_arm64/asm -p runtime/cgo -trimpath "$WORK/b059=>" -I $WORK/b059/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b059/asm_arm64.o ./asm_arm64.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b059/_pkg_.a $WORK/b059/asm_arm64.o $WORK/b059/_x001.o $WORK/b059/_x002.o $WORK/b059/_x003.o $WORK/b059/_x004.o $WORK/b059/_x005.o $WORK/b059/_x006.o $WORK/b059/_x007.o $WORK/b059/_x008.o $WORK/b059/_x009.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b059/_pkg_.a # internal
+
+#
+# net
+#
+
+mkdir -p $WORK/b050/
+cd /usr/local/go/src/net
+TERM='dumb' CGO_LDFLAGS='"-g" "-O2"' /usr/local/go/pkg/tool/darwin_arm64/cgo -objdir $WORK/b050/ -importpath net -- -I $WORK/b050/ -g -O2 ./cgo_bsd.go ./cgo_resnew.go ./cgo_sockold.go ./cgo_unix.go
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_x001.o -c _cgo_export.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_x002.o -c cgo_bsd.cgo2.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_x003.o -c cgo_resnew.cgo2.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_x004.o -c cgo_sockold.cgo2.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_x005.o -c cgo_unix.cgo2.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+cd $WORK/b050
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -I ./ -g -O2 -o ./_cgo_main.o -c _cgo_main.c
+cd $WORK
+clang -fno-caret-diagnostics -c -x c - -o /dev/null || true
+clang -Qunused-arguments -c -x c - -o /dev/null || true
+clang -Wl,--no-gc-sections -x c - -o /dev/null || true
+clang -fdebug-prefix-map=a=b -c -x c - -o /dev/null || true
+clang -gno-record-gcc-switches -c -x c - -o /dev/null || true
+cd /Users/kamal/codes/personal/go_learning/my_cli
+TERM='dumb' clang -I /usr/local/go/src/net -fPIC -arch arm64 -pthread -fmessage-length=0 -fno-common -o $WORK/b050/_cgo_.o $WORK/b050/_cgo_main.o $WORK/b050/_x001.o $WORK/b050/_x002.o $WORK/b050/_x003.o $WORK/b050/_x004.o $WORK/b050/_x005.o -g -O2
+TERM='dumb' /usr/local/go/pkg/tool/darwin_arm64/cgo -dynpackage net -dynimport $WORK/b050/_cgo_.o -dynout $WORK/b050/_cgo_import.go
+cat >$WORK/b050/importcfg << 'EOF' # internal
+# import config
+importmap golang.org/x/net/dns/dnsmessage=vendor/golang.org/x/net/dns/dnsmessage
+importmap golang.org/x/net/route=vendor/golang.org/x/net/route
+packagefile context=$WORK/b051/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile vendor/golang.org/x/net/dns/dnsmessage=$WORK/b052/_pkg_.a
+packagefile vendor/golang.org/x/net/route=$WORK/b053/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile internal/godebug=$WORK/b054/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile internal/nettrace=$WORK/b055/_pkg_.a
+packagefile internal/poll=$WORK/b034/_pkg_.a
+packagefile internal/singleflight=$WORK/b056/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile net/netip=$WORK/b057/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+packagefile runtime/cgo=$WORK/b059/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b050/_pkg_.a -trimpath "$WORK/b050=>" -p net -std -buildid OQxY57X2T4o3_bUgtlCE/OQxY57X2T4o3_bUgtlCE -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b050/importcfg -pack /usr/local/go/src/net/addrselect.go /usr/local/go/src/net/conf.go /usr/local/go/src/net/dial.go /usr/local/go/src/net/dnsclient.go /usr/local/go/src/net/dnsclient_unix.go /usr/local/go/src/net/dnsconfig.go /usr/local/go/src/net/dnsconfig_unix.go /usr/local/go/src/net/error_posix.go /usr/local/go/src/net/error_unix.go /usr/local/go/src/net/fd_posix.go /usr/local/go/src/net/fd_unix.go /usr/local/go/src/net/file.go /usr/local/go/src/net/file_unix.go /usr/local/go/src/net/hook.go /usr/local/go/src/net/hook_unix.go /usr/local/go/src/net/hosts.go /usr/local/go/src/net/interface.go /usr/local/go/src/net/interface_bsd.go /usr/local/go/src/net/interface_darwin.go /usr/local/go/src/net/ip.go /usr/local/go/src/net/iprawsock.go /usr/local/go/src/net/iprawsock_posix.go /usr/local/go/src/net/ipsock.go /usr/local/go/src/net/ipsock_posix.go /usr/local/go/src/net/lookup.go /usr/local/go/src/net/lookup_unix.go /usr/local/go/src/net/mac.go /usr/local/go/src/net/net.go /usr/local/go/src/net/nss.go /usr/local/go/src/net/parse.go /usr/local/go/src/net/pipe.go /usr/local/go/src/net/port.go /usr/local/go/src/net/port_unix.go /usr/local/go/src/net/rawconn.go /usr/local/go/src/net/sendfile_unix_alt.go /usr/local/go/src/net/sock_bsd.go /usr/local/go/src/net/sock_posix.go /usr/local/go/src/net/sockaddr_posix.go /usr/local/go/src/net/sockopt_bsd.go /usr/local/go/src/net/sockopt_posix.go /usr/local/go/src/net/sockoptip_bsdvar.go /usr/local/go/src/net/sockoptip_posix.go /usr/local/go/src/net/splice_stub.go /usr/local/go/src/net/sys_cloexec.go /usr/local/go/src/net/tcpsock.go /usr/local/go/src/net/tcpsock_posix.go /usr/local/go/src/net/tcpsockopt_darwin.go /usr/local/go/src/net/tcpsockopt_posix.go /usr/local/go/src/net/udpsock.go /usr/local/go/src/net/udpsock_posix.go /usr/local/go/src/net/unixsock.go /usr/local/go/src/net/unixsock_posix.go /usr/local/go/src/net/unixsock_readmsg_cloexec.go /usr/local/go/src/net/writev_unix.go $WORK/b050/_cgo_gotypes.go $WORK/b050/cgo_bsd.cgo1.go $WORK/b050/cgo_resnew.cgo1.go $WORK/b050/cgo_sockold.cgo1.go $WORK/b050/cgo_unix.cgo1.go $WORK/b050/_cgo_import.go
+cd /usr/local/go/src/net
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b050/_pkg_.a $WORK/b050/_x001.o $WORK/b050/_x002.o $WORK/b050/_x003.o $WORK/b050/_x004.o $WORK/b050/_x005.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b050/_pkg_.a # internal
+
+#
+# os/signal
+#
+
+mkdir -p $WORK/b060/
+cat >$WORK/b060/go_asm.h << 'EOF' # internal
+EOF
+cd /usr/local/go/src/os/signal
+/usr/local/go/pkg/tool/darwin_arm64/asm -p os/signal -trimpath "$WORK/b060=>" -I $WORK/b060/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -gensymabis -o $WORK/b060/symabis ./sig.s
+cat >$WORK/b060/importcfg << 'EOF' # internal
+# import config
+packagefile context=$WORK/b051/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b060/_pkg_.a -trimpath "$WORK/b060=>" -p os/signal -std -buildid PFIo9RDcAoCeNxI5O8KF/PFIo9RDcAoCeNxI5O8KF -goversion go1.19.4 -symabis $WORK/b060/symabis -shared -c=4 -nolocalimports -importcfg $WORK/b060/importcfg -pack -asmhdr $WORK/b060/go_asm.h /usr/local/go/src/os/signal/doc.go /usr/local/go/src/os/signal/signal.go /usr/local/go/src/os/signal/signal_unix.go
+cd /usr/local/go/src/os/signal
+/usr/local/go/pkg/tool/darwin_arm64/asm -p os/signal -trimpath "$WORK/b060=>" -I $WORK/b060/ -I /usr/local/go/pkg/include -D GOOS_darwin -D GOARCH_arm64 -shared -o $WORK/b060/sig.o ./sig.s
+/usr/local/go/pkg/tool/darwin_arm64/pack r $WORK/b060/_pkg_.a $WORK/b060/sig.o # internal
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b060/_pkg_.a # internal
+
+#
+# github.com/chzyer/readline
+#
+
+mkdir -p $WORK/b046/
+cat >$WORK/b046/importcfg << 'EOF' # internal
+# import config
+packagefile bufio=$WORK/b047/_pkg_.a
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile container/list=$WORK/b048/_pkg_.a
+packagefile encoding/binary=$WORK/b049/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile net=$WORK/b050/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile os/signal=$WORK/b060/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+cd /Users/kamal/codes/personal/go_learning/my_cli
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b046/_pkg_.a -trimpath "$WORK/b046=>" -p github.com/chzyer/readline -complete -buildid B1gE4O9vx0CcXZmSUsEk/B1gE4O9vx0CcXZmSUsEk -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b046/importcfg -pack /Users/kamal/go/src/github.com/chzyer/readline/complete.go /Users/kamal/go/src/github.com/chzyer/readline/complete_helper.go /Users/kamal/go/src/github.com/chzyer/readline/complete_segment.go /Users/kamal/go/src/github.com/chzyer/readline/history.go /Users/kamal/go/src/github.com/chzyer/readline/operation.go /Users/kamal/go/src/github.com/chzyer/readline/password.go /Users/kamal/go/src/github.com/chzyer/readline/readline.go /Users/kamal/go/src/github.com/chzyer/readline/remote.go /Users/kamal/go/src/github.com/chzyer/readline/runebuf.go /Users/kamal/go/src/github.com/chzyer/readline/runes.go /Users/kamal/go/src/github.com/chzyer/readline/search.go /Users/kamal/go/src/github.com/chzyer/readline/std.go /Users/kamal/go/src/github.com/chzyer/readline/term.go /Users/kamal/go/src/github.com/chzyer/readline/term_bsd.go /Users/kamal/go/src/github.com/chzyer/readline/term_unix.go /Users/kamal/go/src/github.com/chzyer/readline/terminal.go /Users/kamal/go/src/github.com/chzyer/readline/utils.go /Users/kamal/go/src/github.com/chzyer/readline/utils_unix.go /Users/kamal/go/src/github.com/chzyer/readline/vim.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b046/_pkg_.a # internal
+
+#
+# github.com/manifoldco/promptui/list
+#
+
+mkdir -p $WORK/b061/
+cat >$WORK/b061/importcfg << 'EOF' # internal
+# import config
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b061/_pkg_.a -trimpath "$WORK/b061=>" -p github.com/manifoldco/promptui/list -complete -buildid jZ3v7lNBnsn4lH3vpONS/jZ3v7lNBnsn4lH3vpONS -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b061/importcfg -pack /Users/kamal/go/src/github.com/manifoldco/promptui/list/list.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b061/_pkg_.a # internal
+
+#
+# github.com/manifoldco/promptui/screenbuf
+#
+
+mkdir -p $WORK/b062/
+cat >$WORK/b062/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b062/_pkg_.a -trimpath "$WORK/b062=>" -p github.com/manifoldco/promptui/screenbuf -complete -buildid ZZHjznZMiNEV8f3yhOua/ZZHjznZMiNEV8f3yhOua -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b062/importcfg -pack /Users/kamal/go/src/github.com/manifoldco/promptui/screenbuf/screenbuf.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b062/_pkg_.a # internal
+
+#
+# text/tabwriter
+#
+
+mkdir -p $WORK/b063/
+cat >$WORK/b063/importcfg << 'EOF' # internal
+# import config
+packagefile io=$WORK/b031/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b063/_pkg_.a -trimpath "$WORK/b063=>" -p text/tabwriter -std -complete -buildid NP0kUJt7ptZa-d488tRh/NP0kUJt7ptZa-d488tRh -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b063/importcfg -pack /usr/local/go/src/text/tabwriter/tabwriter.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b063/_pkg_.a # internal
+
+#
+# net/url
+#
+
+mkdir -p $WORK/b065/
+cat >$WORK/b065/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile path=$WORK/b042/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b065/_pkg_.a -trimpath "$WORK/b065=>" -p net/url -std -complete -buildid OomxVnCfxEDAwC-cv4Cb/OomxVnCfxEDAwC-cv4Cb -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b065/importcfg -pack /usr/local/go/src/net/url/url.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b065/_pkg_.a # internal
+
+#
+# path/filepath
+#
+
+mkdir -p $WORK/b066/
+cat >$WORK/b066/importcfg << 'EOF' # internal
+# import config
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile io/fs=$WORK/b041/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b066/_pkg_.a -trimpath "$WORK/b066=>" -p path/filepath -std -complete -buildid QKq4RUqgPT0BDXZuEjAd/QKq4RUqgPT0BDXZuEjAd -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b066/importcfg -pack /usr/local/go/src/path/filepath/match.go /usr/local/go/src/path/filepath/path.go /usr/local/go/src/path/filepath/path_unix.go /usr/local/go/src/path/filepath/symlink.go /usr/local/go/src/path/filepath/symlink_unix.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b066/_pkg_.a # internal
+
+#
+# text/template/parse
+#
+
+mkdir -p $WORK/b067/
+cat >$WORK/b067/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b067/_pkg_.a -trimpath "$WORK/b067=>" -p text/template/parse -std -complete -buildid gs-1D3lNoY_bMja7roeV/gs-1D3lNoY_bMja7roeV -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b067/importcfg -pack /usr/local/go/src/text/template/parse/lex.go /usr/local/go/src/text/template/parse/node.go /usr/local/go/src/text/template/parse/parse.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b067/_pkg_.a # internal
+
+#
+# text/template
+#
+
+mkdir -p $WORK/b064/
+cat >$WORK/b064/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile internal/fmtsort=$WORK/b019/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile io/fs=$WORK/b041/_pkg_.a
+packagefile net/url=$WORK/b065/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile path=$WORK/b042/_pkg_.a
+packagefile path/filepath=$WORK/b066/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile text/template/parse=$WORK/b067/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b064/_pkg_.a -trimpath "$WORK/b064=>" -p text/template -std -complete -buildid tpuqdgfF5eCsaWVEvWOw/tpuqdgfF5eCsaWVEvWOw -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b064/importcfg -pack /usr/local/go/src/text/template/doc.go /usr/local/go/src/text/template/exec.go /usr/local/go/src/text/template/funcs.go /usr/local/go/src/text/template/helper.go /usr/local/go/src/text/template/option.go /usr/local/go/src/text/template/template.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b064/_pkg_.a # internal
+
+#
+# github.com/manifoldco/promptui
+#
+
+mkdir -p $WORK/b044/
+cat >$WORK/b044/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile github.com/chzyer/readline=$WORK/b046/_pkg_.a
+packagefile github.com/manifoldco/promptui/list=$WORK/b061/_pkg_.a
+packagefile github.com/manifoldco/promptui/screenbuf=$WORK/b062/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile text/tabwriter=$WORK/b063/_pkg_.a
+packagefile text/template=$WORK/b064/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b044/_pkg_.a -trimpath "$WORK/b044=>" -p github.com/manifoldco/promptui -complete -buildid 8HXosnEtE_G8R8yhLE1O/8HXosnEtE_G8R8yhLE1O -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b044/importcfg -pack /Users/kamal/go/src/github.com/manifoldco/promptui/codes.go /Users/kamal/go/src/github.com/manifoldco/promptui/cursor.go /Users/kamal/go/src/github.com/manifoldco/promptui/keycodes.go /Users/kamal/go/src/github.com/manifoldco/promptui/keycodes_other.go /Users/kamal/go/src/github.com/manifoldco/promptui/prompt.go /Users/kamal/go/src/github.com/manifoldco/promptui/promptui.go /Users/kamal/go/src/github.com/manifoldco/promptui/select.go /Users/kamal/go/src/github.com/manifoldco/promptui/styles.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b044/_pkg_.a # internal
+
+#
+# log
+#
+
+mkdir -p $WORK/b068/
+cat >$WORK/b068/importcfg << 'EOF' # internal
+# import config
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b068/_pkg_.a -trimpath "$WORK/b068=>" -p log -std -complete -buildid --CyaPVb1zTqa_UrH-3B/--CyaPVb1zTqa_UrH-3B -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b068/importcfg -pack /usr/local/go/src/log/log.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b068/_pkg_.a # internal
+
+#
+# os/exec
+#
+
+mkdir -p $WORK/b069/
+cat >$WORK/b069/importcfg << 'EOF' # internal
+# import config
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile context=$WORK/b051/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile internal/godebug=$WORK/b054/_pkg_.a
+packagefile internal/syscall/execenv=$WORK/b039/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile io/fs=$WORK/b041/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile path/filepath=$WORK/b066/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b069/_pkg_.a -trimpath "$WORK/b069=>" -p os/exec -std -complete -buildid H5zZRPPFnoiQ_h5dKOv6/H5zZRPPFnoiQ_h5dKOv6 -goversion go1.19.4 -shared -c=4 -nolocalimports -importcfg $WORK/b069/importcfg -pack /usr/local/go/src/os/exec/exec.go /usr/local/go/src/os/exec/exec_unix.go /usr/local/go/src/os/exec/lp_unix.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b069/_pkg_.a # internal
+
+#
+# _/Users/kamal/codes/personal/go_learning/my_cli
+#
+
+mkdir -p $WORK/b001/
+cat >$WORK/b001/importcfg << 'EOF' # internal
+# import config
+packagefile flag=$WORK/b002/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile github.com/manifoldco/promptui=$WORK/b044/_pkg_.a
+packagefile log=$WORK/b068/_pkg_.a
+packagefile os/exec=$WORK/b069/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+EOF
+/usr/local/go/pkg/tool/darwin_arm64/compile -o $WORK/b001/_pkg_.a -trimpath "$WORK/b001=>" -p main -complete -buildid nzcOtSyohWeKOFoVN9LL/nzcOtSyohWeKOFoVN9LL -goversion go1.19.4 -shared -c=4 -D _/Users/kamal/codes/personal/go_learning/my_cli -importcfg $WORK/b001/importcfg -pack ./my_git_clit.go
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b001/_pkg_.a # internal
+cat >$WORK/b001/importcfg.link << 'EOF' # internal
+packagefile _/Users/kamal/codes/personal/go_learning/my_cli=$WORK/b001/_pkg_.a
+packagefile flag=$WORK/b002/_pkg_.a
+packagefile fmt=$WORK/b018/_pkg_.a
+packagefile github.com/manifoldco/promptui=$WORK/b044/_pkg_.a
+packagefile log=$WORK/b068/_pkg_.a
+packagefile os/exec=$WORK/b069/_pkg_.a
+packagefile strings=$WORK/b043/_pkg_.a
+packagefile runtime=$WORK/b009/_pkg_.a
+packagefile encoding=$WORK/b003/_pkg_.a
+packagefile errors=$WORK/b004/_pkg_.a
+packagefile io=$WORK/b031/_pkg_.a
+packagefile os=$WORK/b032/_pkg_.a
+packagefile reflect=$WORK/b020/_pkg_.a
+packagefile sort=$WORK/b030/_pkg_.a
+packagefile strconv=$WORK/b024/_pkg_.a
+packagefile time=$WORK/b037/_pkg_.a
+packagefile internal/fmtsort=$WORK/b019/_pkg_.a
+packagefile math=$WORK/b022/_pkg_.a
+packagefile sync=$WORK/b026/_pkg_.a
+packagefile unicode/utf8=$WORK/b025/_pkg_.a
+packagefile bytes=$WORK/b045/_pkg_.a
+packagefile github.com/chzyer/readline=$WORK/b046/_pkg_.a
+packagefile github.com/manifoldco/promptui/list=$WORK/b061/_pkg_.a
+packagefile github.com/manifoldco/promptui/screenbuf=$WORK/b062/_pkg_.a
+packagefile text/tabwriter=$WORK/b063/_pkg_.a
+packagefile text/template=$WORK/b064/_pkg_.a
+packagefile sync/atomic=$WORK/b028/_pkg_.a
+packagefile context=$WORK/b051/_pkg_.a
+packagefile internal/godebug=$WORK/b054/_pkg_.a
+packagefile internal/syscall/execenv=$WORK/b039/_pkg_.a
+packagefile io/fs=$WORK/b041/_pkg_.a
+packagefile path/filepath=$WORK/b066/_pkg_.a
+packagefile syscall=$WORK/b036/_pkg_.a
+packagefile internal/bytealg=$WORK/b011/_pkg_.a
+packagefile unicode=$WORK/b029/_pkg_.a
+packagefile internal/abi=$WORK/b010/_pkg_.a
+packagefile internal/cpu=$WORK/b012/_pkg_.a
+packagefile internal/goarch=$WORK/b006/_pkg_.a
+packagefile internal/goexperiment=$WORK/b013/_pkg_.a
+packagefile internal/goos=$WORK/b014/_pkg_.a
+packagefile runtime/internal/atomic=$WORK/b015/_pkg_.a
+packagefile runtime/internal/math=$WORK/b016/_pkg_.a
+packagefile runtime/internal/sys=$WORK/b017/_pkg_.a
+packagefile internal/reflectlite=$WORK/b005/_pkg_.a
+packagefile internal/itoa=$WORK/b021/_pkg_.a
+packagefile internal/oserror=$WORK/b033/_pkg_.a
+packagefile internal/poll=$WORK/b034/_pkg_.a
+packagefile internal/safefilepath=$WORK/b038/_pkg_.a
+packagefile internal/syscall/unix=$WORK/b035/_pkg_.a
+packagefile internal/testlog=$WORK/b040/_pkg_.a
+packagefile internal/unsafeheader=$WORK/b007/_pkg_.a
+packagefile math/bits=$WORK/b023/_pkg_.a
+packagefile internal/race=$WORK/b027/_pkg_.a
+packagefile bufio=$WORK/b047/_pkg_.a
+packagefile container/list=$WORK/b048/_pkg_.a
+packagefile encoding/binary=$WORK/b049/_pkg_.a
+packagefile net=$WORK/b050/_pkg_.a
+packagefile os/signal=$WORK/b060/_pkg_.a
+packagefile net/url=$WORK/b065/_pkg_.a
+packagefile path=$WORK/b042/_pkg_.a
+packagefile text/template/parse=$WORK/b067/_pkg_.a
+packagefile vendor/golang.org/x/net/dns/dnsmessage=$WORK/b052/_pkg_.a
+packagefile vendor/golang.org/x/net/route=$WORK/b053/_pkg_.a
+packagefile internal/nettrace=$WORK/b055/_pkg_.a
+packagefile internal/singleflight=$WORK/b056/_pkg_.a
+packagefile net/netip=$WORK/b057/_pkg_.a
+packagefile runtime/cgo=$WORK/b059/_pkg_.a
+packagefile internal/intern=$WORK/b058/_pkg_.a
+modinfo "0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\t_/Users/kamal/codes/personal/go_learning/my_cli\nbuild\t-compiler=gc\nbuild\tCGO_ENABLED=1\nbuild\tCGO_CFLAGS=\nbuild\tCGO_CPPFLAGS=\nbuild\tCGO_CXXFLAGS=\nbuild\tCGO_LDFLAGS=\nbuild\tGOARCH=arm64\nbuild\tGOOS=darwin\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2"
+EOF
+mkdir -p $WORK/b001/exe/
+cd .
+/usr/local/go/pkg/tool/darwin_arm64/link -o $WORK/b001/exe/a.out -importcfg $WORK/b001/importcfg.link -buildmode=exe -buildid=-lSmx144UU-aIpm5UiUp/nzcOtSyohWeKOFoVN9LL/nzcOtSyohWeKOFoVN9LL/-lSmx144UU-aIpm5UiUp -extld=clang $WORK/b001/_pkg_.a
+/usr/local/go/pkg/tool/darwin_arm64/buildid -w $WORK/b001/exe/a.out # internal
+mv $WORK/b001/exe/a.out my_cli
