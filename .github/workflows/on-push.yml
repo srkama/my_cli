@@ -23,8 +23,8 @@ jobs:
       uses: actions/checkout@v2
     
     - name: init go module
-      run: go mod init 
-
+      run: go env -w GO111MODULE=off
+      
     - name: Get dependencies
       run: |
         go get -v -t -d ./...
