@@ -24,3 +24,13 @@ jobs:
           body: ${{ github.event.head_commit.message }}
           draft: true
           prerelease: true
+      - name: Build binaries
+        uses: sosedoff/actions/golang-build@master
+      - name: Upload my_cli windows_amd64
+        id: upload_my_cli_windows_amd64
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: .release/my_cli_windows_amd64.zip
+          asset_name: my_cli_windows_amd64.zip
+          asset_content_type: application/zip
